@@ -324,15 +324,15 @@ class VisitServiceImplTest extends AbstractTest {
         doctor.setSpecializations(List.of(specializationEntity));
         doctor = doctorRepo.save(doctor);
 
-        LocalDateTime startDuty = LocalDateTime.of(2022, 11, 22, 8, 0);
-        LocalDateTime endDuty = LocalDateTime.of(2022, 11, 22, 18, 0);
+        LocalDateTime startDuty = LocalDateTime.of(2022, 12, 22, 8, 0);
+        LocalDateTime endDuty = LocalDateTime.of(2022, 12, 22, 18, 0);
         DutyEntity dutyEntity = dutyEntity(doctor, startDuty, endDuty);
         dutyRepo.save(dutyEntity);
 
         PatientEntity patient = patientEntity();
         patient = patientRepo.save(patient);
 
-        LocalDateTime visitDate = LocalDateTime.of(2022, 11, 22, 10, 15);
+        LocalDateTime visitDate = LocalDateTime.of(2022, 12, 22, 10, 15);
 
         CustomVisitSpecializationTO customVisitSpecializationTO =
                 new CustomVisitSpecializationTO(patient.getId(), SpecializationType.DENTIST, visitDate);

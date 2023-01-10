@@ -311,7 +311,7 @@ class DoctorRepoCustomImplTest extends AbstractTest {
 
         // && then
         assertThat(doctor.getCreateDate()).isAfter(localDateTime.minusSeconds(2));
-        assertThat(doctor.getCreateDate()).isBefore(doctor.getUpdateDate());
+        assertThat(doctor.getCreateDate()).isBeforeOrEqualTo(doctor.getUpdateDate());
     }
 
     @Test

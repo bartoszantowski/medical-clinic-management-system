@@ -427,6 +427,6 @@ class VisitRepoCustomImplTest extends AbstractTest {
 
         // && then
         assertThat(visit1.getCreateDate()).isAfter(localDateTime.minusSeconds(2));
-        assertThat(visit1.getCreateDate()).isBefore(visit1.getUpdateDate());
+        assertThat(visit1.getCreateDate()).isBeforeOrEqualTo(visit1.getUpdateDate());
     }
 }

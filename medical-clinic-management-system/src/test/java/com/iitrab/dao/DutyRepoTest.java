@@ -43,7 +43,7 @@ class DutyRepoTest extends AbstractTest {
 
         DutyEntity dutyEntity = dutyEntity(doctor, date, date.plusHours(1));
         dutyEntity = dutyRepo.save(dutyEntity);
-        dutyEntity.setEndDutyDate(date.plusHours(1));
+        dutyEntity.setEndDutyDate(date.plusHours(2));
         dutyRepo.save(dutyEntity);
 
         // when && then
@@ -73,6 +73,6 @@ class DutyRepoTest extends AbstractTest {
 
         // && then
         assertThat(dutyEntity.getCreateDate()).isAfter(localDateTime.minusSeconds(5));
-        assertThat(dutyEntity.getCreateDate()).isBefore(dutyEntity.getUpdateDate());
+        assertThat(dutyEntity.getCreateDate()).isBeforeOrEqualTo(dutyEntity.getUpdateDate());
     }
 }

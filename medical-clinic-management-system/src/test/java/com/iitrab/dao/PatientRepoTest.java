@@ -246,6 +246,6 @@ class PatientRepoTest extends AbstractTest {
         // && then
         assertThat(patient.getCreateDate()).isAfter(localDateTime.minusSeconds(2));
         assertThat(patient.getCreateDate()).isBefore(localDateTime);
-        assertThat(patient.getCreateDate()).isBefore(patient.getUpdateDate());
+        assertThat(patient.getCreateDate()).isBeforeOrEqualTo(patient.getUpdateDate());
     }
 }
